@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>مجتمع القراء - Readers Hub</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="navbar">
+          <div class="nav-section nav-left">
+            <button class="nav-button menu-button" title="القائمة">
+              <i class="uil uil-bars"></i>
+            </button>
+            <a href="index.html" class="nav-logo">
+              <img src="images/logo.png" alt="logo" class="logo-image" />
+              <h2 class="logo-text">ReadersHub</h2>
+            </a>
+          </div>
+
+          <div class="nav-section nav-center">
+            <form action="#" class="search-form" id="searchForm">
+              <input type="search" id="searchInput" placeholder="ابحث عن كتاب، مؤلف، أو دار نشر..." autocomplete="off" class="search-input" />
+              <button type="submit" class="nav-button search-button" title="بحث">
+                <i class="uil uil-search"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="nav-section nav-right">
+            <button class="nav-button upload-btn" id="openUploadBtn" title="نشر كتاب أو مراجعة جديدة">
+              <i class="uil uil-plus-circle"></i>
+            </button>
+            <button class="nav-button theme-button" title="تغيير المظهر">
+              <i class="uil uil-moon"></i>
+            </button>
+            <button class="auth-action-btn" id="authBtn">تسجيل الدخول</button>
+          </div>
+        </nav>
+      </header>
+
+      <main class="main-layout">
+        <aside class="sidebar">
+          <div class="sidebar-section">
+            <a href="index.html" class="sidebar-link active">
+              <i class="uil uil-estate"></i>
+              <span class="link-label">الرئيسية</span>
+            </a>
+            <a href="#" class="sidebar-link" id="myBooksLink">
+              <i class="uil uil-book-open"></i>
+              <span class="link-label">منشوراتي</span>
+            </a>
+          </div>
+          <hr class="sidebar-divider" />
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">أشهر الناشرين والكتّاب</h3>
+            <div id="sidebarPublishersList"></div>
+          </div>
+        </aside>
+
+        <div class="content-wrapper">
+          <div class="page-header-title" id="pageTitle">
+            أحدث المنشورات والكتب
+          </div>
+          <div class="video-list"></div>
+        </div>
+      </main>
+    </div>
+
+    <div class="modal-overlay" id="postModal">
+      <div class="modal-content">
+        <button class="close-modal-btn"><i class="uil uil-times"></i></button>
+        <div class="modal-body"></div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="uploadModal">
+      <div class="modal-content">
+        <button class="close-modal-btn" id="closeUploadModal"><i class="uil uil-times"></i></button>
+        <h2 style="margin-bottom: 1rem; font-size: 1.25rem;">نشر كتاب أو مراجعة جديدة</h2>
+        <form id="uploadForm" style="display: flex; flex-direction: column; gap: 1rem;">
+          <input type="text" id="bookTitleInput" placeholder="عنوان الكتاب..." required class="form-input" />
+          <input type="url" id="imageInput" placeholder="رابط صورة الغلاف..." required class="form-input" />
+          <textarea id="bookDescInput" placeholder="اكتب ملخصاً ومعلومات حقيقية عن الكتاب..." rows="4" required class="form-input" style="resize: none;"></textarea>
+          <button type="submit" class="submit-btn">نشر الآن</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="authModal">
+      <div class="modal-content" style="max-width: 400px;">
+        <button class="close-modal-btn" id="closeAuthModal"><i class="uil uil-times"></i></button>
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">مرحباً بك في ReadersHub</h2>
+          <p style="color: var(--secondary-color); font-size: 0.9rem;">سجل دخولك لتتمكن من النشر والتفاعل</p>
+        </div>
+        <form id="loginForm" style="display: flex; flex-direction: column; gap: 1rem;">
+          <input type="email" id="loginEmail" placeholder="البريد الإلكتروني" required class="form-input" />
+          <input type="password" id="loginPassword" placeholder="كلمة المرور" required class="form-input" />
+          <button type="submit" class="submit-btn">دخول</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="filter.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
